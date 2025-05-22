@@ -223,9 +223,9 @@ export default function Tarifs() {
             <div>
               <h3 className="text-xl font-semibold mb-4">Conditions de réservation</h3>
               <ul className="space-y-3 text-gray-600">
-                <li>• Réservation recommandée 48h à l'avance</li>
+                <li>• Réservation recommandée 48h à l&apos;avance</li>
                 <li>• Un acompte de 30% est demandé pour confirmer la réservation</li>
-                <li>• Annulation gratuite jusqu'à 24h avant</li>
+                <li>• Annulation gratuite jusqu&apos;à 24h avant</li>
                 <li>• Paiement par carte bancaire, espèces ou chèque</li>
               </ul>
             </div>

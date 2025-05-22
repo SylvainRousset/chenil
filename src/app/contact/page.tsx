@@ -52,7 +52,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Horaires d'ouverture</h2>
+              <h2 className="text-2xl font-semibold mb-4">Horaires d&apos;ouverture</h2>
               <ul className="space-y-2 text-gray-600">
                 <li>Lundi - Vendredi: 8h - 19h</li>
                 <li>Samedi: 9h - 18h</li>

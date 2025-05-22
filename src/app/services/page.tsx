@@ -105,9 +105,9 @@ export default function Services() {
           <h2 className="text-3xl font-bold text-center mb-12">Questions fréquentes</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-3">Quelles sont les conditions d'accueil ?</h3>
+              <h3 className="text-xl font-semibold mb-3">Quelles sont les conditions d&apos;accueil ?</h3>
               <p className="text-gray-600">
-                Votre chien doit être à jour de ses vaccins (CHPL, rage) et avoir un traitement antiparasitaire récent. Nous vous demanderons également son carnet de santé lors de l'accueil.
+                Votre chien doit être à jour de ses vaccins (CHPL, rage) et avoir un traitement antiparasitaire récent. Nous vous demanderons également son carnet de santé lors de l&apos;accueil.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -125,7 +125,7 @@ export default function Services() {
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-semibold mb-3">Quels sont les horaires de visite ?</h3>
               <p className="text-gray-600">
-                Vous pouvez visiter notre établissement sur rendez-vous, du lundi au samedi. Les déposes et reprises de chiens sont possibles pendant nos heures d'ouverture.
+                Vous pouvez visiter notre établissement sur rendez-vous, du lundi au samedi. Les déposes et reprises de chiens sont possibles pendant nos heures d&apos;ouverture.
               </p>
             </div>
           </div>
