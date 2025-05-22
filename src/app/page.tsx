@@ -98,7 +98,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="section-title">Contactez-nous</h2>
           <p className="section-subtitle">
-            Pour toute question ou réservation, n'hésitez pas à nous contacter
+            Pour toute question ou réservation, n&apos;hésitez pas à nous contacter
           </p>
           <Link
             href="/contact"
