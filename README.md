@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chenil des Pyrénées - Site Vitrine
 
-## Getting Started
+Site vitrine moderne pour un chenil situé aux portes des Pyrénées, à Pau. Ce site permet aux propriétaires de chiens de découvrir les services proposés, les tarifs et de prendre rendez-vous pour la garde de leurs animaux.
 
-First, run the development server:
+## Technologies utilisées
 
+- Next.js 14
+- React
+- TypeScript
+- Tailwind CSS
+- ESLint
+
+## Fonctionnalités
+
+- Design moderne et responsive
+- Pages principales :
+  - Accueil
+  - Services
+  - Tarifs
+  - Galerie
+  - Contact
+- Formulaire de contact
+- Galerie photo interactive
+- Présentation détaillée des services
+- Tarifs clairs et transparents
+
+## Prérequis
+
+- Node.js 18.17 ou supérieur
+- npm ou yarn
+
+## Installation
+
+1. Clonez le repository :
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/votre-username/chenil.git
+cd chenil
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Installez les dépendances :
+```bash
+npm install
+# ou
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Créez un fichier `.env.local` à la racine du projet et ajoutez les variables d'environnement nécessaires :
+```env
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Lancez le serveur de développement :
+```bash
+npm run dev
+# ou
+yarn dev
+```
 
-## Learn More
+Le site sera accessible à l'adresse [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+## Structure des dossiers
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+chenil/
+├── public/
+│   └── images/          # Images du site
+│       ├── galerie/     # Photos de la galerie
+│       └── ...
+├── src/
+│   ├── app/            # Pages de l'application
+│   │   ├── contact/    # Page de contact
+│   │   ├── galerie/    # Page galerie
+│   │   ├── services/   # Page services
+│   │   ├── tarifs/     # Page tarifs
+│   │   └── ...
+│   └── components/     # Composants réutilisables
+├── .env.local          # Variables d'environnement
+└── ...
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Déploiement
 
-## Deploy on Vercel
+Le site peut être déployé sur Vercel en quelques clics :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Créez un compte sur [Vercel](https://vercel.com)
+2. Importez votre repository GitHub
+3. Configurez les variables d'environnement
+4. Déployez !
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Personnalisation
+
+### Images
+
+Placez vos images dans le dossier `public/images/` en respectant la structure suivante :
+- `public/images/hero-bg.jpg` : Image de fond de la page d'accueil
+- `public/images/about.jpg` : Image de la section "À propos"
+- `public/images/galerie/` : Photos de la galerie
+- `public/images/service-*.jpg` : Images des services
+
+### Contenu
+
+Modifiez le contenu des pages dans les fichiers correspondants du dossier `src/app/`.
+
+### Styles
+
+Les styles sont gérés avec Tailwind CSS. Vous pouvez personnaliser les couleurs et autres paramètres dans le fichier `tailwind.config.js`.
+
+## Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à soumettre une pull request.
+
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
