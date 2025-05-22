@@ -41,7 +41,7 @@ export default function Home() {
                 Nous accueillons vos chiens dans un environnement sécurisé et adapté à leurs besoins.
               </p>
               <p className="section-content">
-                Notre équipe passionnée s'engage à offrir les meilleurs soins à vos animaux, 
+                Notre équipe passionnée s&apos;engage à offrir les meilleurs soins à vos animaux, 
                 avec des espaces de vie spacieux et des activités quotidiennes adaptées.
               </p>
             </div>

@@ -65,15 +65,10 @@ const photos = [
 export default function Galerie() {
   const [selectedCategory, setSelectedCategory] = useState('tous');
   const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null);
-  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
 
   const filteredPhotos = selectedCategory === 'tous'
     ? photos
     : photos.filter(photo => photo.category === selectedCategory);
-
-  const handleImageError = (photoId: number) => {
-    setImageErrors(prev => ({ ...prev, [photoId]: true }));
-  };
 
   return (
     <main className="min-h-screen py-20 px-4">

@@ -69,6 +69,14 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+
+            <p className="text-gray-600">
+              Pour toute question ou réservation, n&apos;hésitez pas à nous contacter
+            </p>
+
+            <p className="text-gray-600">
+              Nous sommes à votre écoute pour répondre à toutes vos questions
+            </p>
           </div>
 
           {/* Formulaire de contact */}

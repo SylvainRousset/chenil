@@ -1,4 +1,4 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 
 const forfaits = [
   {
@@ -240,6 +240,12 @@ export default function Tarifs() {
               </ul>
             </div>
           </div>
+          <p className="text-gray-600">
+            Pour toute question ou réservation, n&apos;hésitez pas à nous contacter
+          </p>
+          <p className="text-gray-600">
+            Nous sommes à votre écoute pour répondre à toutes vos questions
+          </p>
         </div>
       </div>
     </main>
