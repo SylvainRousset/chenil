@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ImageCarousel from "./components/ImageCarousel";
 
 export default function Home() {
   return (
@@ -45,14 +46,34 @@ export default function Home() {
                 avec des espaces de vie spacieux et des activités quotidiennes adaptées.
               </p>
             </div>
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/images/histoire.jpg"
-                alt="Notre chenil dans les Pyrénées"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <ImageCarousel
+              images={[
+                {
+                  src: "/images/box.jpg",
+                  alt: "Box individuel spacieux pour le confort de votre chien"
+                },
+                {
+                  src: "/images/parc.jpg",
+                  alt: "Notre grand parc de jeux extérieur"
+                },
+                {
+                  src: "/images/parc2.jpg",
+                  alt: "Les chiens jouant dans le parc"
+                },
+                {
+                  src: "/images/detente.jpg",
+                  alt: "Zone de détente pour nos pensionnaires"
+                },
+                {
+                  src: "/images/promenadegal.jpg",
+                  alt: "Sortie en montagne avec les chiens"
+                },
+                {
+                  src: "/images/repos.jpg",
+                  alt: "Zone de repos confortable"
+                }
+              ]}
+            />
           </div>
         </div>
       </section>
