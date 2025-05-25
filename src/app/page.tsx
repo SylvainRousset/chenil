@@ -109,10 +109,17 @@ export default function Home() {
                   <p className="card-content">{service.description}</p>
                 </div>
 
-                {/* Indicateur de clic centré */}
-                <div className="absolute inset-x-0 bottom-4 flex justify-center text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* Indicateur de clic pour desktop */}
+                <div className="absolute inset-x-0 bottom-4 hidden md:flex justify-center text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+
+                {/* Indicateur de tap pour mobile */}
+                <div className="absolute bottom-4 right-4 md:hidden text-blue-600/80">
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
               </Link>
@@ -152,10 +159,17 @@ export default function Home() {
                   <p className="card-content">{tarif.description}</p>
                 </div>
 
-                {/* Indicateur de clic centré */}
-                <div className="absolute inset-x-0 bottom-4 flex justify-center text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* Indicateur de clic pour desktop */}
+                <div className="absolute inset-x-0 bottom-4 hidden md:flex justify-center text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+
+                {/* Indicateur de tap pour mobile */}
+                <div className="absolute bottom-4 right-4 md:hidden text-blue-600/80">
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
               </Link>
