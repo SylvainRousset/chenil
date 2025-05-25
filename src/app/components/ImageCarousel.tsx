@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
@@ -14,6 +14,7 @@ type ImageCarouselProps = {
 
 export default function ImageCarousel({ images }: ImageCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -23,16 +24,26 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  // Autoplay
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
   useEffect(() => {
     if (!emblaApi) return;
 
+    onSelect();
+    emblaApi.on('select', onSelect);
+
     const autoplay = setInterval(() => {
       emblaApi.scrollNext();
-    }, 5000); // Change d'image toutes les 5 secondes
+    }, 5000);
 
-    return () => clearInterval(autoplay);
-  }, [emblaApi]);
+    return () => {
+      emblaApi.off('select', onSelect);
+      clearInterval(autoplay);
+    };
+  }, [emblaApi, onSelect]);
 
   return (
     <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-xl">
@@ -75,8 +86,8 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
           <button
             key={index}
             onClick={() => emblaApi?.scrollTo(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              emblaApi?.selectedScrollSnap() === index
+            className={`w-3 h-3 rounded-full transition-colors ${
+              selectedIndex === index
                 ? 'bg-white'
                 : 'bg-white/50 hover:bg-white/80'
             }`}
