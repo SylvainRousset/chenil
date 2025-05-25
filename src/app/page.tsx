@@ -81,9 +81,17 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-24 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <Link href="/services" className="block">
-            <h2 className="section-title text-center hover:text-blue-600 transition-colors">Nos Services</h2>
-          </Link>
+          <div className="text-center mb-12">
+            <Link 
+              href="/services" 
+              className="group inline-block"
+            >
+              <h2 className="section-title group-hover:text-blue-600 transition-colors relative inline-block">
+                Nos Services
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+              </h2>
+            </Link>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link
@@ -101,8 +109,8 @@ export default function Home() {
                   <p className="card-content">{service.description}</p>
                 </div>
 
-                {/* Indicateur de clic */}
-                <div className="absolute bottom-4 right-4 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* Indicateur de clic centré */}
+                <div className="absolute inset-x-0 bottom-4 flex justify-center text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -116,16 +124,41 @@ export default function Home() {
       {/* Tarifs Section */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <Link href="/tarifs" className="block">
-            <h2 className="section-title text-center hover:text-blue-600 transition-colors">Nos Tarifs</h2>
-          </Link>
+          <div className="text-center mb-12">
+            <Link 
+              href="/tarifs" 
+              className="group inline-block"
+            >
+              <h2 className="section-title group-hover:text-blue-600 transition-colors relative inline-block">
+                Nos Tarifs
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+              </h2>
+            </Link>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {tarifs.map((tarif, index) => (
-              <div key={index} className="card p-8 text-center">
-                <h3 className="card-title">{tarif.title}</h3>
-                <p className="text-4xl font-bold text-blue-600 mb-4">{tarif.price}€</p>
-                <p className="card-content">{tarif.description}</p>
-              </div>
+              <Link
+                key={index}
+                href="/tarifs"
+                className="group relative card p-8 text-center rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer bg-white overflow-hidden"
+              >
+                {/* Overlay au survol */}
+                <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/10 transition-colors duration-300" />
+                
+                {/* Contenu */}
+                <div className="relative z-10">
+                  <h3 className="card-title group-hover:text-blue-600 transition-colors">{tarif.title}</h3>
+                  <p className="text-4xl font-bold text-blue-600 mb-4">{tarif.price}€</p>
+                  <p className="card-content">{tarif.description}</p>
+                </div>
+
+                {/* Indicateur de clic centré */}
+                <div className="absolute inset-x-0 bottom-4 flex justify-center text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -140,9 +173,14 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="group inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-blue-700 hover:-translate-y-1"
           >
-            Nous contacter
+            <span className="flex items-center gap-2">
+              Nous contacter
+              <svg className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
           </Link>
         </div>
       </section>
