@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
 
 const services = [
   {
@@ -47,8 +46,6 @@ const services = [
 ];
 
 export default function Services() {
-  const searchParams = useSearchParams();
-
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
