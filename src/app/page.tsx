@@ -86,11 +86,28 @@ export default function Home() {
           </Link>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="card p-8">
-                <div className="text-4xl mb-6">{service.icon}</div>
-                <h3 className="card-title">{service.title}</h3>
-                <p className="card-content">{service.description}</p>
-              </div>
+              <Link
+                key={index}
+                href={`/services#${service.id}`}
+                className="group relative card p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer bg-white overflow-hidden"
+              >
+                {/* Overlay au survol */}
+                <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/10 transition-colors duration-300" />
+                
+                {/* Contenu */}
+                <div className="relative z-10">
+                  <div className="text-4xl mb-6">{service.icon}</div>
+                  <h3 className="card-title group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                  <p className="card-content">{service.description}</p>
+                </div>
+
+                {/* Indicateur de clic */}
+                <div className="absolute bottom-4 right-4 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -137,17 +154,20 @@ const services = [
   {
     icon: "🏠",
     title: "Garde de chiens",
-    description: "Hébergement confortable pour votre chien avec des espaces adaptés à sa taille et ses besoins."
+    description: "Hébergement confortable pour votre chien avec des espaces adaptés à sa taille et ses besoins.",
+    id: "garde-de-chiens"
   },
   {
     icon: "🐕",
     title: "Promenades",
-    description: "Promenades quotidiennes dans notre grand parc sécurisé et en montagne."
+    description: "Promenades quotidiennes dans notre grand parc sécurisé et en montagne.",
+    id: "promenades"
   },
   {
     icon: "❤️",
     title: "Soins personnalisés",
-    description: "Suivi personnalisé de votre chien avec des soins adaptés à ses besoins spécifiques."
+    description: "Suivi personnalisé de votre chien avec des soins adaptés à ses besoins spécifiques.",
+    id: "soins-personnalises"
   }
 ];
 

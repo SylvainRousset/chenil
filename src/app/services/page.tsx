@@ -1,7 +1,12 @@
+'use client';
+
 import Image from 'next/image';
+import { useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 const services = [
   {
+    id: 'garde-de-chiens',
     title: "Garde de chiens",
     description: "Nous accueillons votre chien dans un environnement sécurisé et adapté à ses besoins. Chaque pensionnaire dispose d'un espace confortable et personnalisé.",
     features: [
@@ -14,6 +19,7 @@ const services = [
     image: "/images/garde.jpg"
   },
   {
+    id: 'promenades',
     title: "Promenades",
     description: "Des promenades quotidiennes dans notre grand parc sécurisé et en montagne pour le bien-être de votre chien.",
     features: [
@@ -26,6 +32,7 @@ const services = [
     image: "/images/promenade.jpg"
   },
   {
+    id: 'soins-personnalises',
     title: "Soins personnalisés",
     description: "Nous prenons soin de votre chien comme s'il était le nôtre, avec une attention particulière à ses besoins spécifiques.",
     features: [
@@ -40,6 +47,18 @@ const services = [
 ];
 
 export default function Services() {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.getElementById(hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   return (
     <main className="min-h-screen py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -52,7 +71,8 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`grid md:grid-cols-2 gap-12 items-center ${
+              id={service.id}
+              className={`grid md:grid-cols-2 gap-12 items-center scroll-mt-24 ${
                 index % 2 === 1 ? 'md:grid-flow-dense' : ''
               }`}
             >
@@ -80,7 +100,7 @@ export default function Services() {
                   ))}
                 </ul>
               </div>
-              <div className={`relative h-[400px] rounded-lg overflow-hidden ${
+              <div className={`relative h-[400px] rounded-xl overflow-hidden ${
                 index % 2 === 1 ? 'md:col-start-1' : ''
               }`}>
                 {service.image ? (
