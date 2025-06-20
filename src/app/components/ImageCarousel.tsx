@@ -75,7 +75,6 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
 
     // Écouter les interactions utilisateur
     emblaApi.on('pointerDown', handleUserInteraction);
-    emblaApi.on('dragEnd', handleUserInteraction);
 
     // Démarrer l'autoplay
     startAutoplay();
@@ -83,7 +82,6 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
     return () => {
       emblaApi.off('select', onSelect);
       emblaApi.off('pointerDown', handleUserInteraction);
-      emblaApi.off('dragEnd', handleUserInteraction);
       stopAutoplay();
       clearTimeout(userInteractionTimeout);
     };
