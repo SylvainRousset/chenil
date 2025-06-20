@@ -152,47 +152,18 @@ export default function Home() {
       <section className="py-24 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <Link 
-              href="/services" 
-              className="group inline-block"
-            >
-              <h2 className="section-title group-hover:text-blue-600 transition-colors relative inline-block">
-                Nos Services
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-              </h2>
-            </Link>
+            <h2 className="section-title">Nos Services</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Link
+              <div
                 key={index}
-                href={`/services#${service.id}`}
-                className="group relative card p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer bg-white overflow-hidden"
+                className="card p-8 rounded-xl shadow-lg bg-white"
               >
-                {/* Overlay au survol */}
-                <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/10 transition-colors duration-300" />
-                
-                {/* Contenu */}
-                <div className="relative z-10">
-                  <div className="text-4xl mb-6">{service.icon}</div>
-                  <h3 className="card-title group-hover:text-blue-600 transition-colors">{service.title}</h3>
-                  <p className="card-content">{service.description}</p>
-                </div>
-
-                {/* Indicateur de clic pour desktop */}
-                <div className="absolute inset-x-0 bottom-4 hidden md:flex justify-center text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </div>
-
-                {/* Indicateur de tap pour mobile */}
-                <div className="absolute bottom-4 right-4 md:hidden text-blue-600/80">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </Link>
+                <div className="text-4xl mb-6">{service.icon}</div>
+                <h3 className="card-title">{service.title}</h3>
+                <p className="card-content">{service.description}</p>
+              </div>
             ))}
           </div>
         </div>

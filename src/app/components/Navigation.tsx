@@ -50,9 +50,6 @@ export default function Navigation() {
               <Link href="/histoire" className={`${isActive('/histoire')} transition-colors`}>
                 Histoire
               </Link>
-              <Link href="/services" className={`${isActive('/services')} transition-colors`}>
-                Services
-              </Link>
               <Link href="/tarifs" className={`${isActive('/tarifs')} transition-colors`}>
                 Tarifs
               </Link>
@@ -105,13 +102,6 @@ export default function Navigation() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Histoire
-                </Link>
-                <Link
-                  href="/services"
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/services')} hover:bg-gray-50`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Services
                 </Link>
                 <Link
                   href="/tarifs"
