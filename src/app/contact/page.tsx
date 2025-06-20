@@ -38,36 +38,46 @@ export default function Contact() {
               <div className="space-y-4 text-gray-600">
                 <p className="flex items-center gap-3">
                   <span className="text-2xl">📍</span>
-                  Route des Pyrénées, Pau
+                  392 Côte de Parelh, 64800 Arros-de-Nay
                 </p>
                 <p className="flex items-center gap-3">
                   <span className="text-2xl">📞</span>
-                  05 XX XX XX XX
+                  <a href="tel:0659177117" className="hover:text-blue-600 transition-colors">06 59 17 71 17</a>
                 </p>
                 <p className="flex items-center gap-3">
                   <span className="text-2xl">✉️</span>
-                  contact@chenildespyrenees.fr
+                  <a href="mailto:lacolodeslabasseres@gmail.com" className="hover:text-blue-600 transition-colors">lacolodeslabasseres@gmail.com</a>
                 </p>
               </div>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Horaires d&apos;ouverture</h2>
+              <h2 className="text-2xl font-semibold mb-4">Horaires d&apos;accueil</h2>
               <ul className="space-y-2 text-gray-600">
-                <li>Lundi - Vendredi: 8h - 19h</li>
-                <li>Samedi: 9h - 18h</li>
-                <li>Dimanche: Sur rendez-vous</li>
+                <li>Lundi - Samedi: 9h30 - 13h30</li>
+                <li>et 17h30 - 20h</li>
+                <li>Dimanche: 17h - 20h (sur rendez-vous)</li>
+                <li className="text-sm text-blue-600 font-medium">Uniquement sur rendez-vous</li>
               </ul>
             </div>
 
             <div>
               <h2 className="text-2xl font-semibold mb-4">Localisation</h2>
-              <div className="aspect-video bg-gray-200 rounded-lg">
-                {/* Ici, vous pourrez ajouter une carte Google Maps */}
-                <div className="w-full h-full flex items-center justify-center text-gray-500">
-                  Carte à intégrer
-                </div>
+              <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://maps.google.com/maps?q=392+Côte+de+Parelh,+64800+Arros-de-Nay,+France&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localisation de La Colo des Labassères - 392 Côte de Parelh, 64800 Arros-de-Nay"
+                />
               </div>
+              <p className="text-sm text-gray-500 mt-2 text-center">
+                📍 392 Côte de Parelh, 64800 Arros-de-Nay
+              </p>
             </div>
 
             <p className="text-gray-600">

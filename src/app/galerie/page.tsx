@@ -6,59 +6,128 @@ import Image from 'next/image';
 const categories = [
   { id: 'tous', label: 'Tous' },
   { id: 'installations', label: 'Nos installations' },
-  { id: 'chiens', label: 'Nos pensionnaires' },
-  { id: 'montagne', label: 'Sorties en montagne' }
+  { id: 'pensionnaires', label: 'Nos pensionnaires' }
 ];
 
 const photos = [
   {
     id: 1,
-    src: '/images/box.jpg',
-    alt: 'Box individuel spacieux',
+    src: '/images/photo7.jpg',
+    alt: 'Piscine pour chiens',
     category: 'installations',
-    title: 'Box individuel'
+    title: 'Piscine'
   },
   {
     id: 2,
-    src: '/images/parc.jpg',
-    alt: 'Parc de jeux extérieur',
+    src: '/images/photo8.jpg',
+    alt: 'Parc de jeux',
     category: 'installations',
-    title: 'Parc de jeux'
+    title: 'Parc'
   },
   {
     id: 3,
-    src: '/images/parc2.jpg',
-    alt: 'Chien jouant dans le parc',
-    category: 'chiens',
-    title: 'Jeux dans le parc'
+    src: '/images/photo9.jpg',
+    alt: 'Box individuelle',
+    category: 'installations',
+    title: 'Box individuelle'
   },
   {
     id: 4,
-    src: '/images/detente.jpg',
-    alt: 'Chien se reposant',
-    category: 'chiens',
-    title: 'Moment de détente'
+    src: '/images/photo10.jpg',
+    alt: 'Box individuelle',
+    category: 'installations',
+    title: 'Box individuelle'
   },
   {
     id: 5,
-    src: '/images/promenadegal.jpg',
-    alt: 'Sortie en montagne',
-    category: 'montagne',
-    title: 'Promenade quotidienne'
+    src: '/images/photo11.jpg',
+    alt: 'Parc de jeux',
+    category: 'installations',
+    title: 'Parc'
   },
   {
     id: 6,
-    src: '/images/acceuil.jpg',
-    alt: 'Vue sur les Pyrénées',
-    category: 'montagne',
-    title: 'Vue panoramique'
+    src: '/images/photo12.jpg',
+    alt: 'Parc de jeux',
+    category: 'installations',
+    title: 'Parc'
   },
   {
     id: 7,
-    src: '/images/repos.jpg',
-    alt: 'Zone de repos',
+    src: '/images/photo13.jpg',
+    alt: 'Box individuelle',
     category: 'installations',
-    title: 'Zone de repos'
+    title: 'Box individuelle'
+  },
+  {
+    id: 8,
+    src: '/images/photo14.jpg',
+    alt: 'Parc de jeux',
+    category: 'installations',
+    title: 'Parc'
+  },
+  {
+    id: 9,
+    src: '/images/photo1.jpg',
+    alt: 'Nos pensionnaires',
+    category: 'pensionnaires',
+    title: 'Nos pensionnaires'
+  },
+  {
+    id: 10,
+    src: '/images/photo2.jpg',
+    alt: 'Nos pensionnaires',
+    category: 'pensionnaires',
+    title: 'Nos pensionnaires'
+  },
+  {
+    id: 11,
+    src: '/images/photo3.jpg',
+    alt: 'Nos pensionnaires',
+    category: 'pensionnaires',
+    title: 'Nos pensionnaires'
+  },
+  {
+    id: 12,
+    src: '/images/photo4.jpg',
+    alt: 'Nos pensionnaires',
+    category: 'pensionnaires',
+    title: 'Nos pensionnaires'
+  },
+  {
+    id: 13,
+    src: '/images/photo5.jpg',
+    alt: 'Nos pensionnaires',
+    category: 'pensionnaires',
+    title: 'Nos pensionnaires'
+  },
+  {
+    id: 14,
+    src: '/images/photo6.jpg',
+    alt: 'Nos pensionnaires',
+    category: 'pensionnaires',
+    title: 'Nos pensionnaires'
+  },
+  {
+    id: 15,
+    src: '/images/photo15.jpg',
+    alt: 'Nos pensionnaires',
+    category: 'pensionnaires',
+    title: 'Nos pensionnaires'
+  },
+  {
+    id: 16,
+    src: '/images/photo16.jpg',
+    alt: 'Nos pensionnaires',
+    category: 'pensionnaires',
+    title: 'Nos pensionnaires'
+  },
+  {
+    id: 17,
+    src: '/images/photo17.jpg',
+    alt: 'Nos pensionnaires',
+    category: 'pensionnaires',
+    title: 'Nos pensionnaires'
   }
 ];
 

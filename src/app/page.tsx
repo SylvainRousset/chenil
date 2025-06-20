@@ -10,8 +10,8 @@ export default function Home() {
         {/* Image de fond */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/acceuil.jpg"
-            alt="Chenil dans les Pyrénées"
+            src="/images/photo8.jpg"
+            alt="La Colo des Labassères dans les Pyrénées"
             fill
             className="object-cover"
             priority
@@ -23,10 +23,10 @@ export default function Home() {
         {/* Contenu */}
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white animate-gradient">
-            Chenil des Pyrénées
+            La Colo des Labassères
           </h1>
           <p className="text-2xl md:text-3xl font-light tracking-wide text-blue-100">
-            Garde de chiens de confiance au cœur des Pyrénées
+            Pension canine familiale à Arros-de-Nay
           </p>
         </div>
       </section>
@@ -34,43 +34,113 @@ export default function Home() {
       {/* À propos Section */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="section-title text-center">Notre Histoire</h2>
+          <div className="text-center mb-12">
+            <Link 
+              href="/histoire" 
+              className="group inline-block"
+            >
+              <h2 className="section-title group-hover:text-blue-600 transition-colors relative inline-block">
+                Notre Histoire
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+              </h2>
+            </Link>
+          </div>
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
+              <h3 className="text-2xl font-semibold text-blue-600 mb-4">Passion, bien-être et liberté : ici, votre chien est comme à la maison.</h3>
+              
               <p className="section-content">
-                Situé aux portes des Pyrénées, notre chenil offre un cadre idyllique pour vos compagnons à quatre pattes. 
-                Nous accueillons vos chiens dans un environnement sécurisé et adapté à leurs besoins.
+                Je m&apos;appelle <strong>Elsa</strong>. Depuis toute petite, j&apos;ai une passion profonde pour les animaux, et plus 
+                particulièrement pour les chiens. Ce lien naturel et sincère m&apos;a conduite à vouloir créer ma propre 
+                pension canine familiale, où je peux aujourd&apos;hui leur offrir une attention constante, dans un cadre 
+                serein et stimulant.
               </p>
+              
               <p className="section-content">
-                Notre équipe passionnée s&apos;engage à offrir les meilleurs soins à vos animaux, 
-                avec des espaces de vie spacieux et des activités quotidiennes adaptées.
+                J&apos;ai travaillé plusieurs années dans une clinique vétérinaire en tant qu&apos;assistante spécialisée en soins. 
+                Je suis également titulaire de l&apos;<strong>ACACED</strong> (Certificat d&apos;Aptitude à l&apos;Exercice des activités liées aux 
+                animaux de compagnie d&apos;espèces domestiques).
               </p>
+
+              <Link
+                href="/histoire"
+                className="group inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-blue-700 hover:-translate-y-1"
+              >
+                <span>Découvrir notre histoire complète</span>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
             </div>
             <ImageCarousel
               images={[
                 {
-                  src: "/images/box.jpg",
-                  alt: "Box individuel spacieux pour le confort de votre chien"
+                  src: "/images/photo1.jpg",
+                  alt: "La Colo des Labassères - Photo 1"
                 },
                 {
-                  src: "/images/parc.jpg",
-                  alt: "Notre grand parc de jeux extérieur"
+                  src: "/images/photo2.jpg",
+                  alt: "La Colo des Labassères - Photo 2"
                 },
                 {
-                  src: "/images/parc2.jpg",
-                  alt: "Les chiens jouant dans le parc"
+                  src: "/images/photo3.jpg",
+                  alt: "La Colo des Labassères - Photo 3"
                 },
                 {
-                  src: "/images/detente.jpg",
-                  alt: "Zone de détente pour nos pensionnaires"
+                  src: "/images/photo4.jpg",
+                  alt: "La Colo des Labassères - Photo 4"
                 },
                 {
-                  src: "/images/promenadegal.jpg",
-                  alt: "Sortie en montagne avec les chiens"
+                  src: "/images/photo5.jpg",
+                  alt: "La Colo des Labassères - Photo 5"
                 },
                 {
-                  src: "/images/repos.jpg",
-                  alt: "Zone de repos confortable"
+                  src: "/images/photo6.jpg",
+                  alt: "La Colo des Labassères - Photo 6"
+                },
+                {
+                  src: "/images/photo7.jpg",
+                  alt: "La Colo des Labassères - Photo 7"
+                },
+                {
+                  src: "/images/photo8.jpg",
+                  alt: "La Colo des Labassères - Photo 8"
+                },
+                {
+                  src: "/images/photo9.jpg",
+                  alt: "La Colo des Labassères - Photo 9"
+                },
+                {
+                  src: "/images/photo10.jpg",
+                  alt: "La Colo des Labassères - Photo 10"
+                },
+                {
+                  src: "/images/photo11.jpg",
+                  alt: "La Colo des Labassères - Photo 11"
+                },
+                {
+                  src: "/images/photo12.jpg",
+                  alt: "La Colo des Labassères - Photo 12"
+                },
+                {
+                  src: "/images/photo13.jpg",
+                  alt: "La Colo des Labassères - Photo 13"
+                },
+                {
+                  src: "/images/photo14.jpg",
+                  alt: "La Colo des Labassères - Photo 14"
+                },
+                {
+                  src: "/images/photo15.jpg",
+                  alt: "La Colo des Labassères - Photo 15"
+                },
+                {
+                  src: "/images/photo16.jpg",
+                  alt: "La Colo des Labassères - Photo 16"
+                },
+                {
+                  src: "/images/photo17.jpg",
+                  alt: "La Colo des Labassères - Photo 17"
                 }
               ]}
             />
@@ -225,18 +295,18 @@ const services = [
 
 const tarifs = [
   {
-    title: "Garde à la journée",
+    title: "Tarif standard",
+    price: "20",
+    description: "Tous services inclus : parcs, sorties, piscine, surveillance, photos/vidéos"
+  },
+  {
+    title: "Tarif réduit",
+    price: "15",
+    description: "À partir de 2 chiens de la même famille ou garde de plus de 10 jours"
+  },
+  {
+    title: "Garde individuelle",
     price: "25",
-    description: "Pour une journée complète de garde, incluant les repas et les promenades."
-  },
-  {
-    title: "Garde à la semaine",
-    price: "150",
-    description: "Tarif avantageux pour une semaine complète de garde."
-  },
-  {
-    title: "Garde au mois",
-    price: "500",
-    description: "Solution économique pour les gardes de longue durée."
+    description: "Pour les chiens nécessitant une garde individuelle ou besoins spécifiques"
   }
 ];

@@ -26,12 +26,12 @@ export default function Navigation() {
               <Link href="/" className="flex items-center text-xl font-bold text-gray-900 hover:text-gray-700 transition-colors">
                 <Image
                   src="/images/logo.webp"
-                  alt="Logo Chenil des Pyrénées"
+                  alt="Logo La Colo des Labassères"
                   width={40}
                   height={40}
                   className="mr-2"
                 />
-                Chenil des Pyrénées
+                La Colo des Labassères
               </Link>
               {/* Bouton Réserver mobile visible à gauche du menu burger */}
               <Link
@@ -46,6 +46,9 @@ export default function Navigation() {
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/" className={`${isActive('/')} transition-colors`}>
                 Accueil
+              </Link>
+              <Link href="/histoire" className={`${isActive('/histoire')} transition-colors`}>
+                Histoire
               </Link>
               <Link href="/services" className={`${isActive('/services')} transition-colors`}>
                 Services
@@ -95,6 +98,13 @@ export default function Navigation() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Accueil
+                </Link>
+                <Link
+                  href="/histoire"
+                  className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/histoire')} hover:bg-gray-50`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Histoire
                 </Link>
                 <Link
                   href="/services"

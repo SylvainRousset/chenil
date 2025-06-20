@@ -12,16 +12,32 @@ type ImageCarouselProps = {
 };
 
 export default function ImageCarousel({ images }: ImageCarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    skipSnaps: false,
+    dragFree: false,
+    duration: 20,
+    align: 'center',
+    inViewThreshold: 0.7
+  });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isClicking, setIsClicking] = useState(false);
 
   const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
+    if (emblaApi && !isClicking) {
+      setIsClicking(true);
+      emblaApi.scrollPrev();
+      setTimeout(() => setIsClicking(false), 250);
+    }
+  }, [emblaApi, isClicking]);
 
   const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+    if (emblaApi && !isClicking) {
+      setIsClicking(true);
+      emblaApi.scrollNext();
+      setTimeout(() => setIsClicking(false), 250);
+    }
+  }, [emblaApi, isClicking]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -34,21 +50,50 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
     onSelect();
     emblaApi.on('select', onSelect);
 
-    const autoplay = setInterval(() => {
-      emblaApi.scrollNext();
-    }, 5000);
+    let autoplay: NodeJS.Timeout;
+    let userInteractionTimeout: NodeJS.Timeout;
+
+    const startAutoplay = () => {
+      autoplay = setInterval(() => {
+        if (!isClicking) {
+          emblaApi.scrollNext();
+        }
+      }, 3500);
+    };
+
+    const stopAutoplay = () => {
+      if (autoplay) clearInterval(autoplay);
+    };
+
+    const handleUserInteraction = () => {
+      stopAutoplay();
+      clearTimeout(userInteractionTimeout);
+      userInteractionTimeout = setTimeout(() => {
+        startAutoplay();
+      }, 2000);
+    };
+
+    // Écouter les interactions utilisateur
+    emblaApi.on('pointerDown', handleUserInteraction);
+    emblaApi.on('dragStart', handleUserInteraction);
+
+    // Démarrer l'autoplay
+    startAutoplay();
 
     return () => {
       emblaApi.off('select', onSelect);
-      clearInterval(autoplay);
+      emblaApi.off('pointerDown', handleUserInteraction);
+      emblaApi.off('dragStart', handleUserInteraction);
+      stopAutoplay();
+      clearTimeout(userInteractionTimeout);
     };
-  }, [emblaApi, onSelect]);
+  }, [emblaApi, onSelect, isClicking]);
 
   return (
     <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-xl">
       {/* Carrousel */}
       <div className="embla overflow-hidden h-full" ref={emblaRef}>
-        <div className="embla__container flex h-full">
+        <div className="embla__container flex h-full will-change-transform transition-transform ease-out">
           {images.map((image, index) => (
             <div key={index} className="embla__slide flex-[0_0_100%] relative h-full">
               <Image
@@ -57,6 +102,9 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                 fill
                 className="object-cover"
                 priority={index === 0}
+                quality={95}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading={index <= 2 ? "eager" : "lazy"}
               />
             </div>
           ))}
@@ -66,7 +114,8 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
       {/* Flèches de navigation */}
       <button
         onClick={scrollPrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 hidden md:block"
+        disabled={isClicking}
+        className={`absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 hidden md:block ${isClicking ? 'opacity-50 cursor-not-allowed' : ''}`}
         aria-label="Image précédente"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +124,8 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
       </button>
       <button
         onClick={scrollNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 hidden md:block"
+        disabled={isClicking}
+        className={`absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 hidden md:block ${isClicking ? 'opacity-50 cursor-not-allowed' : ''}`}
         aria-label="Image suivante"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,20 +133,11 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
         </svg>
       </button>
 
-      {/* Indicateurs de progression */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => emblaApi?.scrollTo(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              selectedIndex === index
-                ? 'bg-white'
-                : 'bg-white/50 hover:bg-white/80'
-            }`}
-            aria-label={`Aller à l'image ${index + 1}`}
-          />
-        ))}
+      {/* Indicateurs de progression simplifiés */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/30 px-4 py-2 rounded-full z-10">
+        <span className="text-white text-sm font-medium">
+          {selectedIndex + 1} / {images.length}
+        </span>
       </div>
     </div>
   );
