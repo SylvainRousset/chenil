@@ -1,3 +1,16 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tarifs Pension Canine - Dès 15€/jour | La Colo des Labassères Arros-de-Nay",
+  description: "Tarifs transparents pension canine : 20€/jour standard, 15€/jour tarif réduit, 25€/jour garde individuelle. Tous services inclus : parcs, piscine, balades, surveillance.",
+  keywords: "tarif pension canine, prix garde chien, 15 euros, 20 euros, pension pas cher, Arros-de-Nay, garde chien tarif",
+  openGraph: {
+    title: "Tarifs Pension Canine - La Colo des Labassères",
+    description: "Tarifs transparents dès 15€/jour. Tous services inclus : parcs spacieux, piscine, balades quotidiennes et surveillance permanente.",
+    images: ['/images/photo11.jpg'],
+  },
+};
+
 // import Link from 'next/link';
 
 export default function Tarifs() {

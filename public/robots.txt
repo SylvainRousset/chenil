@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Pages importantes à indexer en priorité
+Allow: /histoire
+Allow: /tarifs
+Allow: /galerie
+Allow: /contact
+
+# Sitemap
+Sitemap: https://lacolodeslabasseres.fr/sitemap.xml
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1 

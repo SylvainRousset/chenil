@@ -1,6 +1,16 @@
-'use client';
-
 import Image from 'next/image';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Notre Histoire - Elsa et La Colo des Labassères | Pension canine Arros-de-Nay",
+  description: "Découvrez l'histoire d'Elsa, passionnée d'animaux et titulaire ACACED. Pension canine familiale avec parcs 65-80m², piscine et présence permanente à Arros-de-Nay.",
+  keywords: "histoire pension canine, Elsa Gracia, ACACED, pension familiale, parcs chiens, Arros-de-Nay, expérience vétérinaire",
+  openGraph: {
+    title: "Notre Histoire - La Colo des Labassères",
+    description: "L'histoire d'Elsa et de sa passion pour les animaux. Pension canine familiale avec parcs spacieux et soins personnalisés.",
+    images: ['/images/photo6.jpg'],
+  },
+};
 
 export default function Histoire() {
   return (

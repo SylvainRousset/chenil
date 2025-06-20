@@ -1,3 +1,15 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mentions Légales - La Colo des Labassères | Pension Canine SIREN 944323013",
+  description: "Mentions légales de La Colo des Labassères. Elsa Gracia, SIREN 944323013, ACACED 2024/8170-AFD 4. Assurance MAAF, hébergement Vercel, RGPD.",
+  keywords: "mentions légales, SIREN 944323013, ACACED, assurance MAAF, RGPD, pension canine légale",
+  robots: {
+    index: true,
+    follow: false,
+  },
+};
+
 export default function MentionsLegales() {
   return (
     <main className="min-h-screen py-20 px-4">

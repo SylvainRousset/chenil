@@ -15,6 +15,117 @@ const playfair = Playfair_Display({
 
 export { metadata };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://lacolodeslabasseres.fr",
+  "name": "La Colo des Labassères",
+  "alternateName": "Pension canine La Colo des Labassères",
+  "description": "Pension canine familiale à Arros-de-Nay. Parcs spacieux de 65-80m², piscine, balades en nature. Garde de chiens avec ACACED et présence permanente.",
+  "url": "https://lacolodeslabasseres.fr",
+  "telephone": "+33659177117",
+  "email": "lacolodeslabasseres@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "392 Côte de Parelh",
+    "addressLocality": "Arros-de-Nay",
+    "postalCode": "64800",
+    "addressCountry": "FR",
+    "addressRegion": "Nouvelle-Aquitaine"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.2834,
+    "longitude": -0.2567
+  },
+  "openingHours": [
+    "Mo-Sa 09:30-13:30",
+    "Mo-Sa 17:30-20:00",
+    "Su 17:00-20:00"
+  ],
+  "priceRange": "15€-25€",
+  "paymentAccepted": "Cash, Bank Transfer",
+  "currenciesAccepted": "EUR",
+  "founder": {
+    "@type": "Person",
+    "name": "Elsa Gracia",
+    "jobTitle": "Propriétaire et responsable pension canine",
+    "hasCredential": "ACACED 2024/8170-AFD 4"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.2834,
+      "longitude": -0.2567
+    },
+    "geoRadius": "50000"
+  },
+  "serviceType": "Pension canine, Garde de chiens",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services de pension canine",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Garde standard",
+          "description": "Tous services inclus : parcs, sorties, piscine, surveillance, photos/vidéos"
+        },
+        "price": "20",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "20",
+          "priceCurrency": "EUR",
+          "unitText": "par jour"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Tarif réduit",
+          "description": "À partir de 2 chiens de la même famille ou garde de plus de 10 jours"
+        },
+        "price": "15",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "15",
+          "priceCurrency": "EUR",
+          "unitText": "par jour"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Garde individuelle",
+          "description": "Pour les chiens nécessitant une garde individuelle ou besoins spécifiques"
+        },
+        "price": "25",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "25",
+          "priceCurrency": "EUR",
+          "unitText": "par jour"
+        }
+      }
+    ]
+  },
+  "image": [
+    "https://lacolodeslabasseres.fr/images/photo8.jpg",
+    "https://lacolodeslabasseres.fr/images/photo11.jpg",
+    "https://lacolodeslabasseres.fr/images/photo7.jpg"
+  ],
+  "sameAs": [
+    "https://lacolodeslabasseres.fr"
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,6 +133,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans`}>
         <Navigation />
         <div className="pt-16">
