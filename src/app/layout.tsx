@@ -169,6 +169,11 @@ export default function RootLayout({
                   <li>et 17h30 - 20h</li>
                   <li>Dimanche: 17h - 20h (RDV)</li>
                 </ul>
+                <div className="mt-4 p-3 bg-blue-900/50 rounded-lg">
+                  <p className="text-sm text-blue-200 font-medium">
+                    📞 Joignable en dehors des heures d&apos;accueil
+                  </p>
+                </div>
               </div>
             </div>
             <div className="border-t border-gray-800 mt-8 pt-8">

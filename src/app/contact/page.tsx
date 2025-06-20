@@ -59,6 +59,19 @@ export default function Contact() {
                 <li>Dimanche: 17h - 20h (sur rendez-vous)</li>
                 <li className="text-sm text-blue-600 font-medium">Uniquement sur rendez-vous</li>
               </ul>
+              
+              <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-lg">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">📞</span>
+                  <div>
+                    <h3 className="font-semibold text-blue-800 mb-2">Disponibilité étendue</h3>
+                    <p className="text-blue-700 text-sm leading-relaxed">
+                      Je reste joignable au <strong>06 59 17 71 17</strong> même en dehors des heures d&apos;accueil 
+                      pour toute question, information ou urgence concernant votre chien.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div>
