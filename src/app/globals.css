@@ -25,9 +25,13 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+.font-title {
+  font-family: 'Fredoka One', cursive;
 }
+
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+} */
 
 @keyframes gradient {
   0% { background-position: 0% 50%; }

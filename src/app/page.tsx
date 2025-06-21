@@ -22,7 +22,7 @@ export default function Home() {
         
         {/* Contenu */}
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white animate-gradient">
+          <h1 className="font-title text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white animate-gradient">
             La Colo des Labassères
           </h1>
           <p className="text-2xl md:text-3xl font-light tracking-wide text-blue-100">
